@@ -1,13 +1,17 @@
-import * as React from 'react';
-import {Button, View, Text} from 'react-native';
+import  React, { Component }  from 'react';
+import {Button, View, Text, LogBox} from 'react-native';
 import {NavigationContainer} from '@react-navigation/native';
 import {createNativeStackNavigator} from '@react-navigation/native-stack';
 import DrawerNavigator from './navigators/DrawerNavigator';
 import AuthStack from './screens/AuthScreens/AuthStack/AuthStack';
+LogBox.ignoreLogs(['Reanimated 2']);
 
 const Stack = createNativeStackNavigator();
 
-function App() {
+export default class App extends React.Component{
+
+  render()
+  {
   return (
     <NavigationContainer>
       <Stack.Navigator initialRouteName="AuthStack">
@@ -25,6 +29,7 @@ function App() {
       </Stack.Navigator>
     </NavigationContainer>
   );
+  }
 }
 
-export default App;
+

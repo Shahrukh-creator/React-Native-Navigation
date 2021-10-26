@@ -7,7 +7,9 @@ import ProfileScreen from '../screens/ProfileScreen';
 
 const Stack = createNativeStackNavigator();
 
-export default function StackNavigator() {
+export default class StackNavigator {
+  render()
+  {
   return (
       <Stack.Navigator initialRouteName="HomeScreen" 
       screenOptions={{
@@ -17,4 +19,5 @@ export default function StackNavigator() {
         <Stack.Screen name="ProfileScreen" component={ProfileScreen} />
       </Stack.Navigator>
   );
+  }
 }
