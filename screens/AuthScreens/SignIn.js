@@ -10,39 +10,32 @@ import {
   View,
   TouchableOpacity,
 } from 'react-native';
-import {useState} from 'react';
 
-export default function SignIn({navigation}) {
-  const [email, setemail] = React.useState('');
-  const [password, setpassword] = React.useState('');
 
-  const handleSubmitPress = () => {
+export default class SignIn extends React.Component {
 
-    if (!email || !password) {
-        alert('Details are Incomplete');
-      
-    }
-    else
-    {
-        setemail('');
-        setpassword('');
-        navigation.navigate('Drawer');
+  constructor()
+  {
+   super();
+    this.state = {
+      email: '',
+      password: '',
+    };
+    
+  }
+
+  handleSubmitPress() {
+    if (!this.state.email || !this.state.password) {
+      alert('Details are Incomplete');
+    } else {
+      this.setState({email: '', password: ''});
+      this.props.navigation.navigate('Drawer');
     }
   };
 
-  //   onLogin = () => {
-  //     Alert.alert(
-  //       'React Native Credentials: ' +
-  //         firstname +
-  //         ' ' +
-  //         ' ' +
-  //         lastname +
-  //         ' ' +
-  //         email +
-  //         ' ' +
-  //         password,
-  //     );
-  //   };
+render()
+{
+
 
   return (
     //// SafeAreaView is used for fitting on iOS Devices ////
@@ -50,14 +43,14 @@ export default function SignIn({navigation}) {
       <Image style={styles.logo} source={require('../../assets/img2.png')} />
 
       <TextInput
-        value={email}
-        onChangeText={text => setemail(text)}
+        value={this.state.email}
+        onChangeText={(text) => this.setState({email:text})}
         placeholder={'Email'}
         style={styles.input}
       />
       <TextInput
-        value={password}
-        onChangeText={text => setpassword(text)}
+        value={this.state.password}
+        onChangeText={(text) => this.setState({password:text})}
         placeholder={'Password'}
         secureTextEntry={true}
         style={styles.input}
@@ -65,17 +58,18 @@ export default function SignIn({navigation}) {
       <TouchableOpacity
         style={styles.button}
         activeOpacity={0.5}
-        onPress={handleSubmitPress}>
+        onPress={this.handleSubmitPress.bind(this)}>
         <Text style={styles.buttonText}>Sign In</Text>
       </TouchableOpacity>
 
       <Text
         style={styles.registerTextStyle}
-        onPress={() => navigation.navigate('SignUp')}>
+        onPress={() => this.props.navigation.navigate('SignUp')}>
         New Here ? Register
       </Text>
     </SafeAreaView>
   );
+}
 }
 
 const styles = StyleSheet.create({

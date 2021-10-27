@@ -1,4 +1,4 @@
-import * as React from 'react';
+import React , {Component} from 'react';
 import {Button, View, Text} from 'react-native';
 import {createNativeStackNavigator} from '@react-navigation/native-stack';
 import SignIn from '../SignIn';
@@ -6,9 +6,11 @@ import SignUp from '../SignUp';
 
 const Stack = createNativeStackNavigator();
 
-export default function Auth() {
+export default class Auth extends React.Component {
   // Stack Navigator for Sign In and Sign up Screen
-  return (
+  render()
+  {
+    return (
     <Stack.Navigator initialRouteName="SignIn">
       <Stack.Screen
         name="SignIn"
@@ -43,4 +45,5 @@ export default function Auth() {
       />
     </Stack.Navigator>
   );
+  }
 }

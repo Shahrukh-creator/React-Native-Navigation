@@ -10,61 +10,63 @@ import {
   View,
   TouchableOpacity,
 } from 'react-native';
-import {useState} from 'react';
-
-export default function SignUp({navigation}) {
-  const [firstname, setfirstname] = React.useState('');
-  const [lastname, setlastname] = React.useState('');
-  const [email, setemail] = React.useState('');
-  const [password, setpassword] = React.useState('');
-
-  const handleSubmitPress = () => {
 
 
-    if (!email || !password || !firstname || !lastname) {
+export default class SignUp extends React.Component {
+
+constructor()
+  {
+   super();
+    this.state = {
+      email: '',
+      password: '',
+      firstname:'',
+      lastname:''
+    };
+  }
+  
+
+  handleSubmitPress(){
+
+
+    if (!this.state.email || !this.state.password || !this.state.firstname || !this.state.lastname) {
 
         alert('Details are Incomplete');
     } else
     {
-        setfirstname('');
-        setlastname('');
-        setemail('');
-        setpassword('');
-        navigation.navigate('SignIn');
+         this.setState({email: '', password: '',firstname:'',
+      lastname:''});
+      this.props.navigation.navigate('SignIn');
     }
   };
 
-  //   onLogin = () => {
-
-  //     Alert.alert('React Native Credentials: ' + firstname + ' '
-  //      + ' ' + lastname + ' ' + email + ' ' + password);
-  //   }
-
+render()
+{
   return (
     //// SafeAreaView is used for fitting on iOS Devices ////
     <SafeAreaView style={styles.container}>
       <Image style={styles.logo} source={require('../../assets/img2.png')} />
       <TextInput
-        value={firstname}
-        onChangeText={text => setfirstname(text)}
+        value={this.state.firstname}
+        onChangeText={(text) => this.setState({firstname:text})}
         placeholder={'Firstname'}
         style={styles.input}
       />
       <TextInput
-        value={lastname}
-        onChangeText={text => setlastname(text)}
+        value={this.state.lastname}
+        onChangeText={(text) => this.setState({lastname:text})}
         placeholder={'Lastname'}
         style={styles.input}
       />
       <TextInput
-        value={email}
-        onChangeText={text => setemail(text)}
+        value={this.state.email}
+        onChangeText={(text) => this.setState({email:text})}
         placeholder={'Email'}
         style={styles.input}
       />
       <TextInput
-        value={password}
-        onChangeText={text => setpassword(text)}
+        value={this.state.password}
+        onChangeText={(text) => this.setState({password:text})}
         placeholder={'Password'}
         secureTextEntry={true}
         style={styles.input}
@@ -72,17 +74,18 @@ export default function SignUp({navigation}) {
       <TouchableOpacity
         style={styles.button}
         activeOpacity={0.5}
-        onPress={handleSubmitPress}>
+        onPress={this.handleSubmitPress.bind(this)}>
         <Text style={styles.buttonText}>Sign Up</Text>
       </TouchableOpacity>
 
       <Text
         style={styles.registerTextStyle}
-        onPress={() => navigation.navigate('SignIn')}>
+        onPress={() => this.props.navigation.navigate('SignIn')}>
         Already Registered ?
       </Text>
     </SafeAreaView>
   );
+}
 }
 
 const styles = StyleSheet.create({
