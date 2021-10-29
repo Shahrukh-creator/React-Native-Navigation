@@ -61,7 +61,7 @@ export default class ProfileScreen extends React.Component {
                     });
                   }}
                   style={styles.buttonStyle}
-                  title="VIEW POSTS"
+                  title="VIEW DETAILS"
                 />
               </Card>
               
@@ -84,5 +84,6 @@ const styles = StyleSheet.create({
     marginLeft: 0,
     marginRight: 0,
     marginBottom: 0,
+    backgroundColor:'green'
   },
 });

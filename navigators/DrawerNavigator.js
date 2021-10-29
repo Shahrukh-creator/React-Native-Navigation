@@ -2,12 +2,9 @@ import React, {Component} from 'react';
 import {Button, View, StyleSheet, Image} from 'react-native';
 import {createDrawerNavigator} from '@react-navigation/drawer';
 import {NavigationContainer} from '@react-navigation/native';
-import StackNavigator from './StackNavigator';
-import Profile from '../screens/ProfileScreen';
 import Home from '../screens/HomeScreen';
 import ContactScreen from '../screens/ContactScreen';
 import LogOut from '../screens/LogOut'
-import ProfileScreen1 from '../screens/ProfileScreen1';
 import ProfileScreen2 from '../screens/ProfileScreen2';
 import ProfileScreen3 from '../screens/ProfileScreen3';
 
@@ -32,7 +29,7 @@ export default class DrawerNavigator extends React.Component {
           },
         }}
         />
-      <Drawer.Screen name="Profile" component={Profile}  options={{
+      {/* <Drawer.Screen name="Profile" component={Profile}  options={{
           headerTitleAlign: 'center',
           title: 'Profile', //Set Header Title
           headerStyle: {
@@ -54,7 +51,7 @@ export default class DrawerNavigator extends React.Component {
           headerTitleStyle: {
             fontWeight: 'bold', //Set Header text style
           },
-        }}/>
+        }}/> */}
         <Drawer.Screen name="ProfileScreen2" component={ProfileScreen2}  options={{
           headerTitleAlign: 'center',
           title: 'ProfileScreen 2', //Set Header Title

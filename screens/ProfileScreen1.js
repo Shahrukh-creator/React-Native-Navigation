@@ -42,16 +42,6 @@ export default class ProfileScreen1 extends Component {
     // always executed
     this.setState({isLoading: false});
 
-    // //    axios.get('https://jsonplaceholder.typicode.com/posts/1').then(res=>{
-    // //        console.log(res);
-    // //        this.setState({data: res.data});
-    // //    })
-    // //    .catch(function (error) {
-    // //          console.error(error);
-
-    // //       });
-    // //    this.setState({ isLoading: false });
-    //   }, []); ///For function
   }
 
   componentDidMount() {
@@ -85,15 +75,14 @@ export default class ProfileScreen1 extends Component {
                   
                   {"\n"}
                 </Text>
+                 <Button
+                  onPress={() => this.props.navigation.navigate('ProfileScreen') }
+                  style={styles.buttonStyle}
+                  title="BACK TO POST"
+                />
               </Card>
         )}
-
-        {/* <Button title="Go to Home" onPress={() => this.props.navigation.navigate('Home')} />
-      <Button title="Go back" onPress={() => this.props.navigation.goBack()} />
-      <Button
-        title="Go back to first screen in stack"
-        onPress={() => this.props.navigation.popToTop()}
-      /> */}
+                
       </View>
     );
   }

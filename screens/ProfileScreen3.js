@@ -82,12 +82,6 @@ export default class ProfileScreen3 extends Component {
           />
         )}
 
-        {/* <Button title="Go to Home" onPress={() => this.props.navigation.navigate('Home')} />
-      <Button title="Go back" onPress={() => this.props.navigation.goBack()} />
-      <Button
-        title="Go back to first screen in stack"
-        onPress={() => this.props.navigation.popToTop()}
-      /> */}
       </View>
     );
   }

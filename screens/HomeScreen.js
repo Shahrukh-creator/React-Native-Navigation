@@ -1,7 +1,12 @@
-import * as React from 'react';
+import  React, {Component} from 'react';
 import { Button, View, Text } from 'react-native';
 
 class HomeScreen extends React.Component  {
+
+  constructor(props) {
+    super(props);
+  }
+
   render()
   {
   return (
@@ -9,7 +14,7 @@ class HomeScreen extends React.Component  {
       <Text>Home Screen</Text>
       <Button
         title="Go to ProfileScreen"
-        onPress={() => this.props.navigation.navigate('Profile')}
+        onPress={() => this.props.navigation.navigate('ProfileStack')}
       />
       <Button
         title="Go to HomeScreen"
