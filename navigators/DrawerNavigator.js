@@ -2,12 +2,15 @@ import React, {Component} from 'react';
 import {Button, View, StyleSheet, Image} from 'react-native';
 import {createDrawerNavigator} from '@react-navigation/drawer';
 import {NavigationContainer} from '@react-navigation/native';
-import StackNavigator from './StackNavigator';
-import Profile from '../screens/ProfileScreen';
 import Home from '../screens/HomeScreen';
 import ContactScreen from '../screens/ContactScreen';
 import LogOut from '../screens/LogOut'
+<<<<<<< Updated upstream
 
+=======
+import ProfileScreen2 from '../screens/ProfileScreen2';
+import ProfileScreen3 from '../screens/ProfileScreen3';
+>>>>>>> Stashed changes
 
 const Drawer = createDrawerNavigator();
 
@@ -30,7 +33,7 @@ export default class DrawerNavigator extends React.Component {
           },
         }}
         />
-      <Drawer.Screen name="Profile" component={Profile}  options={{
+      {/* <Drawer.Screen name="Profile" component={Profile}  options={{
           headerTitleAlign: 'center',
           title: 'Profile', //Set Header Title
           headerStyle: {
@@ -41,6 +44,44 @@ export default class DrawerNavigator extends React.Component {
             fontWeight: 'bold', //Set Header text style
           },
         }}/>
+<<<<<<< Updated upstream
+=======
+
+<Drawer.Screen name="ProfileScreen1" component={ProfileScreen1}  options={{
+          headerTitleAlign: 'center',
+          title: 'ProfileScreen 1', //Set Header Title
+          headerStyle: {
+            backgroundColor: '#307ecc', //Set Header color
+          },
+          headerTintColor: '#fff', //Set Header text color
+          headerTitleStyle: {
+            fontWeight: 'bold', //Set Header text style
+          },
+        }}/> */}
+        <Drawer.Screen name="ProfileScreen2" component={ProfileScreen2}  options={{
+          headerTitleAlign: 'center',
+          title: 'ProfileScreen 2', //Set Header Title
+          headerStyle: {
+            backgroundColor: '#307ecc', //Set Header color
+          },
+          headerTintColor: '#fff', //Set Header text color
+          headerTitleStyle: {
+            fontWeight: 'bold', //Set Header text style
+          },
+        }}/>
+        <Drawer.Screen name="ProfileScreen3" component={ProfileScreen3}  options={{
+          headerTitleAlign: 'center',
+          title: 'ProfileScreen 3', //Set Header Title
+          headerStyle: {
+            backgroundColor: '#307ecc', //Set Header color
+          },
+          headerTintColor: '#fff', //Set Header text color
+          headerTitleStyle: {
+            fontWeight: 'bold', //Set Header text style
+          },
+        }}/>
+
+>>>>>>> Stashed changes
        <Drawer.Screen name="Contact" component={ContactScreen}  options={{
           headerTitleAlign: 'center',
           title: 'Contact', //Set Header Title
